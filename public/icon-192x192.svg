@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0fdf4;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo circular con gradiente -->
+  <circle cx="96" cy="96" r="86.4" fill="url(#mainGradient)" filter="url(#shadow)"/>
+  
+  <!-- Círculo interior para profundidad -->
+  <circle cx="96" cy="96" r="76.80000000000001" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.96"/>
+  
+  <!-- Hojas decorativas de fondo -->
+  <g opacity="0.15">
+    <path d="M48 57.599999999999994 Q67.19999999999999 48 86.4 57.599999999999994 Q67.19999999999999 67.19999999999999 48 57.599999999999994 Z" fill="#ffffff"/>
+    <path d="M124.80000000000001 124.80000000000001 Q144 115.19999999999999 163.2 124.80000000000001 Q144 134.39999999999998 124.80000000000001 124.80000000000001 Z" fill="#ffffff"/>
+  </g>
+  
+  <!-- Texto GN -->
+  <text x="96" y="124.80000000000001" text-anchor="middle" fill="url(#textGradient)" 
+        font-family="Arial, sans-serif" font-weight="bold" font-size="57.599999999999994"
+        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">GN</text>
+  
+  <!-- Puntos decorativos -->
+  <circle cx="48" cy="38.400000000000006" r="2.88" fill="#ffffff" opacity="0.8"/>
+  <circle cx="144" cy="48" r="1.92" fill="#ffffff" opacity="0.6"/>
+  <circle cx="38.400000000000006" cy="153.60000000000002" r="1.92" fill="#ffffff" opacity="0.7"/>
+  <circle cx="153.60000000000002" cy="163.2" r="2.88" fill="#ffffff" opacity="0.5"/>
+</svg>

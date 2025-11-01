@@ -1,0 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-First Optimizations */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimizar toques en móvil */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  input, textarea, [contenteditable] {
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+}
+
+@layer components {
+  /* Touch-Friendly Button Styles */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] relative overflow-hidden;
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile-First Card Component */
+  .mobile-card {
+    @apply bg-gray-800/50 backdrop-blur-lg rounded-xl border border-gray-700/30 shadow-xl;
+    @apply p-4 sm:p-6 transition-all duration-300;
+    will-change: transform;
+  }
+
+  /* Optimized Input Fields for Mobile */
+  .mobile-input {
+    @apply w-full px-4 py-3 bg-gray-800/50 border border-gray-600/30 rounded-lg;
+    @apply text-gray-100 placeholder-gray-400 focus:border-emerald-500/50;
+    @apply focus:ring-2 focus:ring-emerald-500/20 focus:outline-none;
+    @apply transition-all duration-200;
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+
+  /* Safe Area Insets for Notched Devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer utilities {
+  /* ========================= */
+  /* CLASES TEMÁTICAS UTILITY */
+  /* ========================= */
+  
+  /* Fondos temáticos */
+  .bg-theme-primary { background-color: rgb(var(--background-primary)); }
+  .bg-theme-secondary { background-color: rgb(var(--background-secondary)); }
+  .bg-theme-card { background-color: rgb(var(--background-card)); }
+  .bg-theme-glass { background-color: var(--glass-bg); }
+  
+  /* Textos temáticos */
+  .text-theme-primary { color: rgb(var(--text-primary)); }
+  .text-theme-secondary { color: rgb(var(--text-secondary)); }
+  .text-theme-muted { color: rgb(var(--text-muted)); }
+  
+  /* Colores primarios temáticos */
+  .text-theme-accent { color: rgb(var(--primary-color)); }
+  .text-theme-accent-light { color: rgb(var(--primary-light)); }
+  .bg-theme-accent { background-color: rgb(var(--primary-color)); }
+  .bg-theme-accent-light { background-color: rgb(var(--primary-light)); }
+  
+  /* Bordes temáticos */
+  .border-theme { border-color: rgb(var(--border-color)); }
+  .border-theme-light { border-color: rgb(var(--border-light)); }
+  .border-theme-glass { border-color: var(--glass-border); }
+  
+  /* Estados temáticos */
+  .text-success { color: rgb(var(--success-color)); }
+  .text-warning { color: rgb(var(--warning-color)); }
+  .text-error { color: rgb(var(--error-color)); }
+  .text-info { color: rgb(var(--info-color)); }
+  
+  .bg-success { background-color: rgb(var(--success-color)); }
+  .bg-warning { background-color: rgb(var(--warning-color)); }
+  .bg-error { background-color: rgb(var(--error-color)); }
+  .bg-info { background-color: rgb(var(--info-color)); }
+  
+  /* Cards temáticas modernas */
+  .theme-card {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  [data-theme="light"] .theme-card {
+    background-color: rgb(var(--background-card));
+    border: 1px solid rgb(var(--border-color));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    backdrop-filter: none; /* Sin blur en tema corporativo */
+  }
+  
+  /* Botones temáticos */
+  .btn-theme-primary {
+    background: linear-gradient(135deg, rgb(var(--primary-color)), rgb(var(--primary-light)));
+    color: white;
+    border: 1px solid rgb(var(--primary-color));
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-theme-primary:hover {
+    background: linear-gradient(135deg, rgb(var(--primary-dark)), rgb(var(--primary-color)));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--primary-color), 0.3);
+  }
+  
+  .btn-theme-secondary {
+    background-color: var(--glass-bg);
+    color: rgb(var(--text-primary));
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-theme-secondary:hover {
+    background-color: rgb(var(--background-card) / 0.8);
+    border-color: rgb(var(--primary-color) / 0.4);
+  }
+
+  /* Custom Glow Effects - Adaptados a temas */
+  .glow-theme-primary {
+    text-shadow: 0 0 8px rgba(var(--primary-color), 0.5), 0 0 16px rgba(var(--primary-color), 0.3);
+  }
+  
+  [data-theme="light"] .glow-theme-primary {
+    text-shadow: 0 0 4px rgba(var(--primary-color), 0.3), 0 0 8px rgba(var(--primary-color), 0.2);
+  }
+  
+  .glow-emerald {
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.5), 0 0 16px rgba(16, 185, 129, 0.4);
+  }
+  
+  .glow-purple {
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.5), 0 0 16px rgba(168, 85, 247, 0.4);
+  }
+  
+  .glow-blue {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.5), 0 0 16px rgba(59, 130, 246, 0.4);
+  }
+  
+  .glow-cyan {
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5), 0 0 16px rgba(34, 211, 238, 0.4);
+  }
+
+  /* Performance Optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* Touch Gestures - Optimizado para GN Jardinería */
+  .swipe-enabled {
+    touch-action: pan-x pan-y;
+  }
+
+  .swipe-card {
+    touch-action: pan-x;
+    transform: translateX(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .swipe-card.swiping {
+    transition: none;
+  }
+
+  .swipe-actions {
+    @apply absolute inset-y-0 right-0 flex items-center bg-red-500/90;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Bottom Navigation Específico */
+  .bottom-nav-item {
+    @apply relative flex flex-col items-center justify-center;
+    @apply py-2 px-3 rounded-xl transition-all duration-200;
+    @apply text-gray-400 hover:text-emerald-300;
+    @apply min-h-[60px] min-w-[60px];
+    touch-action: manipulation;
+  }
+
+  [data-theme="light"] .bottom-nav-item {
+    @apply text-slate-600 hover:text-blue-600;
+    font-weight: 500;
+  }
+
+  .bottom-nav-item.active {
+    @apply text-emerald-400 bg-emerald-500/10;
+    transform: scale(1.05);
+  }
+
+  [data-theme="light"] .bottom-nav-item.active {
+    color: rgb(var(--primary-color));
+    background-color: rgba(var(--primary-color), 0.12);
+    box-shadow: 0 2px 8px rgba(var(--primary-color), 0.2);
+  }
+
+  .bottom-nav-item:active {
+    transform: scale(0.95);
+  }
+}
+
+/* PWA Optimizations */
+@media (display-mode: standalone) {
+  .pwa-only {
+    @apply block;
+  }
+  
+  .browser-only {
+    @apply hidden;
+  }
+
+  /* Status Bar Area */
+  .status-bar-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* High DPI/Retina Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .glow-emerald, .glow-purple, .glow-blue, .glow-cyan {
+    text-shadow: 0 0 4px rgba(16, 185, 129, 0.6), 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+}
+
+/* ========================= */
+/* SISTEMA DE TEMAS DUAL    */
+/* ========================= */
+
+:root {
+  /* Variables base del tema oscuro (actual) */
+  --primary-color: 16, 185, 129; /* emerald-500 */
+  --primary-light: 52, 211, 153; /* emerald-400 */
+  --primary-dark: 5, 150, 105; /* emerald-600 */
+  
+  --background-primary: 17, 24, 39; /* gray-900 */
+  --background-secondary: 31, 41, 55; /* gray-800 */
+  --background-card: 55, 65, 81; /* gray-700 */
+  
+  --text-primary: 243, 244, 246; /* gray-100 */
+  --text-secondary: 209, 213, 219; /* gray-300 */
+  --text-muted: 156, 163, 175; /* gray-400 */
+  
+  --border-color: 75, 85, 99; /* gray-600 */
+  --border-light: 107, 114, 128; /* gray-500 */
+  
+  --success-color: 34, 197, 94; /* green-500 */
+  --warning-color: 245, 158, 11; /* amber-500 */
+  --error-color: 239, 68, 68; /* red-500 */
+  --info-color: 59, 130, 246; /* blue-500 */
+  
+  --glass-bg: rgba(17, 24, 39, 0.6);
+  --glass-border: rgba(16, 185, 129, 0.2);
+  
+  color-scheme: dark;
+}
+
+/* TEMA CLARO CORPORATIVO - CAMBIO DRAMÁTICO */
+[data-theme="light"] {
+  /* AZUL CORPORATIVO PROFESIONAL - Completamente diferente al verde */
+  --primary-color: 37, 99, 235; /* blue-600 - Azul corporativo confiable */
+  --primary-light: 96, 165, 250; /* blue-400 - Azul brillante y moderno */
+  --primary-dark: 29, 78, 216; /* blue-700 - Azul profundo para hover */
+  
+  /* FONDOS BLANCOS Y LIMPIOS - Contraste total con el tema oscuro */
+  --background-primary: 255, 255, 255; /* white - Fondo principal blanco puro */
+  --background-secondary: 248, 250, 252; /* slate-50 - Secciones ligeramente grises */
+  --background-card: 248, 250, 252; /* slate-50 - Cards con sutil diferencia */
+  
+  /* TEXTOS OSCUROS PROFESIONALES - Contraste máximo */
+  --text-primary: 15, 23, 42; /* slate-900 - Negro azulado muy legible */
+  --text-secondary: 51, 65, 85; /* slate-700 - Gris oscuro profesional */
+  --text-muted: 100, 116, 139; /* slate-500 - Gris medio para subtítulos */
+  
+  /* BORDES DEFINIDOS Y CORPORATIVOS */
+  --border-color: 203, 213, 225; /* slate-300 - Bordes visibles y limpios */
+  --border-light: 226, 232, 240; /* slate-200 - Bordes suaves pero presentes */
+  
+  /* COLORES DE ESTADO CORPORATIVOS PROFESIONALES */
+  --success-color: 34, 197, 94; /* green-500 - Verde éxito clásico */
+  --warning-color: 251, 191, 36; /* yellow-400 - Amarillo corporativo */
+  --error-color: 239, 68, 68; /* red-500 - Rojo corporativo clásico */
+  --info-color: 37, 99, 235; /* blue-600 - Azul información consistente */
+  
+  /* SIN GLASSMORPHISM - Look corporativo limpio y sólido */
+  --glass-bg: rgba(248, 250, 252, 0.95); /* Casi sólido, muy corporativo */
+  --glass-border: rgba(37, 99, 235, 0.2); /* Borde azul corporativo visible */
+  
+  color-scheme: light;
+}
+
+/* Dark Mode Optimizations */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+/* ESTILOS ESPECÍFICOS PARA TEMA CORPORATIVO CLARO */
+[data-theme="light"] {
+  /* Cards más corporativas con bordes definidos */
+  .mobile-card {
+    @apply bg-theme-card border border-theme shadow-md;
+    backdrop-filter: none;
+  }
+  
+  /* Inputs corporativos limpios */
+  .mobile-input {
+    @apply bg-white border-slate-300 text-slate-900 placeholder-slate-500;
+    @apply focus:border-blue-600 focus:ring-blue-600/20;
+  }
+  
+  /* Botones más corporativos */
+  .btn-theme-secondary {
+    @apply bg-white border-slate-300 text-slate-700 shadow-sm;
+    backdrop-filter: none;
+  }
+  
+  .btn-theme-secondary:hover {
+    @apply bg-slate-50 border-blue-600 text-blue-600;
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+  }
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

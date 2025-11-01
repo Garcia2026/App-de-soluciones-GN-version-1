@@ -1,0 +1,405 @@
+/* ================================================ */
+/* CONTINUACIÓN DE ESTILOS ULTRA-FUTURISTAS */
+/* ================================================ */
+
+/* SCANNER OCULAR */
+.eye-scanner {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  z-index: 5;
+}
+
+.scanner-eye {
+  width: 60px;
+  height: 30px;
+  background: radial-gradient(ellipse, #ff0000 0%, #660000 70%, transparent 100%);
+  border-radius: 50px;
+  animation: eyeGlow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.scanner-beam {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff0000, transparent);
+  animation: scanBeam 3s ease-in-out infinite;
+}
+
+@keyframes eyeGlow {
+  0% { 
+    box-shadow: 0 0 20px #ff0000;
+    transform: scaleX(1);
+  }
+  100% { 
+    box-shadow: 0 0 40px #ff0000;
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes scanBeam {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* HOLOGRAMA PROYECTOR */
+.hologram-projector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projector-base {
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(135deg, #333, #666);
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.projector-light {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #00ffff, transparent);
+  border-radius: 50%;
+  animation: projectorPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes projectorPulse {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.5); }
+}
+
+/* LOGO HOLOGRÁFICO 3D */
+.logo-hologram {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hologram-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hologramFloat ease-in-out infinite;
+}
+
+.layer-1 {
+  animation-duration: 3s;
+  animation-delay: 0s;
+  z-index: 3;
+}
+
+.layer-2 {
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  z-index: 2;
+  transform: translateZ(-20px);
+}
+
+.layer-3 {
+  animation-duration: 4s;
+  animation-delay: 1s;
+  z-index: 1;
+  transform: translateZ(-40px);
+}
+
+.hologram-text {
+  font-size: 4rem;
+  font-weight: 900;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+  animation: hologramGlitch 3s ease-in-out infinite;
+}
+
+@keyframes hologramFloat {
+  0%, 100% { 
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    opacity: 0.8;
+  }
+  33% { 
+    transform: translateY(-5px) rotateX(10deg) rotateY(10deg);
+    opacity: 1;
+  }
+  66% { 
+    transform: translateY(5px) rotateX(-5deg) rotateY(-10deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes hologramGlitch {
+  0%, 90%, 100% { 
+    transform: translateX(0);
+  }
+  95% { 
+    transform: translateX(-5px);
+  }
+  98% { 
+    transform: translateX(5px);
+  }
+}
+
+/* PARTÍCULAS DE DATOS */
+.data-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.data-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00ffff;
+  border-radius: 50%;
+  animation: dataOrbit 5s linear infinite;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+@keyframes dataOrbit {
+  0% { 
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+    opacity: 0.5;
+  }
+}
+
+/* CAMPO DE FUERZA */
+.force-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.field-layer {
+  position: absolute;
+  border: 1px solid;
+  border-radius: 50%;
+  animation: fieldPulse ease-in-out infinite alternate;
+}
+
+.field-1 {
+  width: 180px;
+  height: 180px;
+  top: -15px;
+  left: -15px;
+  border-color: rgba(0, 255, 255, 0.3);
+  animation-duration: 2s;
+}
+
+.field-2 {
+  width: 200px;
+  height: 200px;
+  top: -25px;
+  left: -25px;
+  border-color: rgba(255, 0, 128, 0.2);
+  animation-duration: 3s;
+}
+
+.field-3 {
+  width: 220px;
+  height: 220px;
+  top: -35px;
+  left: -35px;
+  border-color: rgba(255, 255, 0, 0.1);
+  animation-duration: 4s;
+}
+
+@keyframes fieldPulse {
+  0% { 
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* ANILLOS CUÁNTICOS ORBITALES */
+.quantum-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+}
+
+.quantum-ring {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 50%;
+  animation: quantumOrbit linear infinite;
+}
+
+.ring-1 {
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  left: 50px;
+  border-color: rgba(0, 255, 255, 0.4);
+  animation-duration: 8s;
+}
+
+.ring-2 {
+  width: 250px;
+  height: 250px;
+  top: 25px;
+  left: 25px;
+  border-color: rgba(255, 0, 128, 0.3);
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.ring-3 {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  border-color: rgba(255, 255, 0, 0.2);
+  animation-duration: 15s;
+}
+
+.ring-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffffff, transparent);
+  border-radius: 50%;
+  animation: particleOrbit linear infinite;
+}
+
+.particle-1 { 
+  animation-duration: 3s;
+  box-shadow: 0 0 10px #00ffff;
+}
+.particle-2 { 
+  animation-duration: 4s; 
+  animation-delay: 1s;
+  box-shadow: 0 0 10px #ff0080;
+}
+.particle-3 { 
+  animation-duration: 5s; 
+  animation-delay: 2s;
+  box-shadow: 0 0 10px #ffff00;
+}
+
+@keyframes quantumOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes particleOrbit {
+  0% { 
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    opacity: 0.3;
+  }
+}
+
+/* EFECTOS DE TELETRANSPORTE */
+.teleport-effects {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+}
+
+.teleport-ring {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 50%;
+  animation: teleportExpand 2s ease-out infinite;
+}
+
+.teleport-ring.ring-1 {
+  width: 50px;
+  height: 20px;
+  bottom: 0;
+  left: 75px;
+  border-color: #00ffff;
+  animation-delay: 0s;
+}
+
+.teleport-ring.ring-2 {
+  width: 100px;
+  height: 40px;
+  bottom: 10px;
+  left: 50px;
+  border-color: #ff0080;
+  animation-delay: 0.3s;
+}
+
+.teleport-ring.ring-3 {
+  width: 150px;
+  height: 60px;
+  bottom: 20px;
+  left: 25px;
+  border-color: #ffff00;
+  animation-delay: 0.6s;
+}
+
+.teleport-beam {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(to top, #00ffff, transparent);
+  animation: teleportBeam 2s ease-in-out infinite;
+}
+
+@keyframes teleportExpand {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes teleportBeam {
+  0%, 100% { 
+    opacity: 0;
+    height: 80px;
+  }
+  50% { 
+    opacity: 1;
+    height: 120px;
+  }
+}

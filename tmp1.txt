@@ -1,0 +1,250 @@
+<template>
+  <MainLayout>
+    <template #header-actions>
+      <!-- Botón optimizado para móvil -->
+      <button class="btn-gold mobile-optimized-btn" @click="mostrarFormularioTransaccion">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        <span class="hidden sm:inline ml-2">Nueva Transacción</span>
+        <span class="sm:hidden ml-1">+</span>
+      </button>
+    </template>
+    
+    <div class="finanzas-container">
+      <!-- Welcome Section - Enhanced Hero -->
+      <div class="welcome-section">
+        <div class="hero-banner bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-3xl overflow-hidden">
+          <div class="hero-content relative z-10">
+            <div class="hero-bg-pattern absolute inset-0 opacity-5"></div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="hero-title-section">
+                <div class="flex items-center mb-3">
+                  <div class="hero-icon bg-gradient-to-r from-emerald-400 to-cyan-400 p-3 rounded-2xl mr-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h1 class="hero-title text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                      Centro Financiero GN
+                    </h1>
+                    <p class="hero-subtitle text-gray-400 text-sm font-medium">
+                      Dashboard Ejecutivo • {{ formatearFecha(new Date()) }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="status-badge" :class="isFirebaseConnected ? 'status-online' : 'status-offline'">
+                  <div class="status-dot"></div>
+                  <span class="text-xs font-medium">{{ isFirebaseConnected ? 'En Línea' : 'Conectando...' }}</span>
+                </div>
+              </div>
+            </div>
+            <p class="hero-description text-base md:text-lg leading-relaxed text-gray-300 mb-8">
+              Panel de control integral para finanzas empresariales, gestión de créditos y análisis de flujo de caja en tiempo real
+            </p>
+            
+            <!-- Enhanced KPI Cards -->
+            <div class="kpi-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <!-- Total Movimientos -->
+              <div class="kpi-card group hover:scale-105 transition-all duration-300">
+                <div class="kpi-header">
+                  <div class="kpi-icon-wrapper bg-gradient-to-br from-blue-500 to-indigo-600">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div class="kpi-trend positive">📊</div>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-label">Total de Movimientos</h3>
+                  <p class="kpi-value text-blue-400" v-if="!cargando">{{ movimientos?.length || 0 }}</p>
+                  <p class="kpi-value text-gray-400" v-else>---</p>
+                  <p class="kpi-description">Transacciones registradas</p>
+                  <div class="kpi-progress-bar">
+                    <div class="progress-fill bg-blue-500" :style="{ width: '75%' }"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flujo Neto -->
+              <div class="kpi-card group hover:scale-105 transition-all duration-300" :class="(flujoNeto || 0) >= 0 ? 'positive-flow' : 'negative-flow'">
+                <div class="kpi-header">
+                  <div class="kpi-icon-wrapper" :class="(flujoNeto || 0) >= 0 ? 'bg-gradient-to-br from-emerald-500 to-green-600' : 'bg-gradient-to-br from-red-500 to-rose-600'">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <div class="kpi-trend" :class="(flujoNeto || 0) >= 0 ? 'positive' : 'negative'">
+                    {{ (flujoNeto || 0) >= 0 ? '📈' : '📉' }}
+                  </div>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-label">Flujo de Efectivo</h3>
+                  <p class="kpi-value" :class="(flujoNeto || 0) >= 0 ? 'text-emerald-400' : 'text-red-400'" v-if="!cargando">
+                    {{ formatearDinero(Math.abs(flujoNeto || 0)) }}
+                  </p>
+                  <p class="kpi-value text-gray-400" v-else>---</p>
+                  <p class="kpi-description" :class="(flujoNeto || 0) >= 0 ? 'text-emerald-300' : 'text-red-300'" v-if="!cargando">
+                    {{ (flujoNeto || 0) >= 0 ? 'Resultado positivo' : 'Requiere atención' }}
+                  </p>
+                  <p class="kpi-description text-gray-400" v-else>Calculando flujo...</p>
+                  <div class="kpi-progress-bar">
+                    <div class="progress-fill" :class="(flujoNeto || 0) >= 0 ? 'bg-emerald-500' : 'bg-red-500'" :style="{ width: '100%' }"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Progreso Préstamo -->
+              <div class="kpi-card group hover:scale-105 transition-all duration-300">
+                <div class="kpi-header">
+                  <div class="kpi-icon-wrapper bg-gradient-to-br from-orange-500 to-amber-600">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div class="kpi-trend positive">⚡</div>
+                </div>
+                <div class="kpi-content">
+                  <h3 class="kpi-label">Progreso del Préstamo</h3>
+                  <p class="kpi-value text-orange-400" v-if="!cargando">
+                    {{ (((pagosPrestamo || 0) / 36) * 100).toFixed(0) }}%
+                  </p>
+                  <p class="kpi-value text-gray-400" v-else>---%</p>
+                  <p class="kpi-description text-orange-300" v-if="!cargando">
+                    {{ pagosPrestamo || 0 }} de 36 cuotas pagadas
+                  </p>
+                  <p class="kpi-description text-gray-400" v-else>Cargando datos...</p>
+                  <div class="kpi-progress-bar">
+                    <div class="progress-fill bg-orange-500" :style="{ width: (((pagosPrestamo || 0) / 36) * 100) + '%' }"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-if="!isFirebaseConnected" class="status-indicator warning">
+            <div class="status-dot warning"></div>
+            <span class="status-text">Conectando...</span>
+          </div>
+          <div v-else class="status-indicator success">
+            <div class="status-dot success"></div>
+            <span class="status-text">Sistema Operativo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Quick Actions -->
+      <div class="quick-actions-section mb-8">
+        <div class="section-header mb-6">
+          <h2 class="section-title text-xl font-bold text-white flex items-center">
+            <svg class="w-6 h-6 mr-3 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Acciones Rápidas
+          </h2>
+          <p class="section-description text-gray-400 text-sm">
+            Accesos directos a funciones principales del sistema financiero
+          </p>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <button @click="mostrarModalDonEduardo = true"
+                  class="action-card bg-gradient-to-br from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 group">
+            <div class="action-icon-wrapper">
+              <CreditCard :size="28" class="action-icon group-hover:scale-110 transition-transform" />
+            </div>
+            <span class="action-label">Don Eduardo</span>
+            <span class="action-description">Créditos y préstamos</span>
+          </button>
+
+          <button @click="mostrarFormularioTransaccion"
+                  class="action-card bg-gradient-to-br from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 group">
+            <div class="action-icon-wrapper">
+              <Plus :size="28" class="action-icon group-hover:scale-110 transition-transform" />
+            </div>
+            <span class="action-label">Nueva Transacción</span>
+            <span class="action-description">Registrar movimiento</span>
+          </button>
+
+          <button @click="abrirModalGananciaMensual"
+                  class="action-card bg-gradient-to-br from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 group">
+            <div class="action-icon-wrapper">
+              <Calculator :size="28" class="action-icon group-hover:scale-110 transition-transform" />
+            </div>
+            <span class="action-label">Pago Préstamo</span>
+            <span class="action-description">{{ formatearDinero(montoPagoPrestamo) }}</span>
+          </button>
+
+          <button @click="exportarDatos"
+                  class="action-card bg-gradient-to-br from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600 group">
+            <div class="action-icon-wrapper">
+              <FileText :size="28" class="action-icon group-hover:scale-110 transition-transform" />
+            </div>
+            <span class="action-label">Exportar</span>
+            <span class="action-description">Generar reporte</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Enhanced Dashboard Principal -->
+      <div class="dashboard-section mb-8">
+        <div class="section-header mb-6">
+          <h2 class="section-title text-2xl font-bold text-white flex items-center">
+            <svg class="w-7 h-7 mr-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Dashboard Financiero
+          </h2>
+          <p class="section-description text-gray-400 text-sm">
+            Monitoreo en tiempo real de todas las operaciones financieras
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          <!-- Estado Don Eduardo - Enhanced Card -->
+          <div class="xl:col-span-2 enhanced-card">
+            <div class="enhanced-card-header">
+              <div class="card-title-section">
+                <div class="title-icon bg-gradient-to-r from-purple-500 to-pink-500">
+                  <CreditCard :size="24" class="text-white" />
+                </div>
+                <div>
+                  <h3 class="card-title">Crédito Revolvente</h3>
+                  <p class="card-subtitle">Don Eduardo • Línea de Crédito</p>
+                </div>
+              </div>
+              <button @click="mostrarModalDonEduardo = true" class="enhanced-action-btn">
+                <Plus :size="18" class="mr-2" />
+                <span>Nuevo Movimiento</span>
+              </button>
+            </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+          <div class="glass-info-card rounded-lg p-4">
+            <h4 class="text-sm font-medium text-purple-600 mb-2">Saldo Actual</h4>
+            <p class="text-xl md:text-2xl font-bold" :class="saldoDonEduardo >= 0 ? 'text-red-600' : 'text-emerald-600'">
+              {{ formatearDinero(Math.abs(saldoDonEduardo)) }}
+            </p>
+            <p class="text-xs text-purple-700 mt-1">
+              {{ saldoDonEduardo >= 0 ? 'Deuda pendiente' : 'A nuestro favor' }}
+            </p>
+          </div>
+          <div class="glass-info-card rounded-lg p-4">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="text-sm font-medium text-emerald-600">Pago Mensual</h4>
+              <button @click="abrirModalGananciaMensual" 
+                      class="text-xs bg-emerald-100 hover:bg-emerald-200 px-2 py-1 rounded border border-emerald-300 text-emerald-700 transition-colors">
+                Pagar
+              </button>
+            </div>
+            <p class="text-xl md:text-2xl font-bold text-emerald-600">{{ formatearDinero(gananciaMensualDonEduardo) }}</p>
+            <p class="text-xs text-emerald-700 mt-1">Ganancia Don Eduardo</p>
+          </div>
+          <div class="glass-info-card rounded-lg p-4">
+            <h4 class="text-sm font-medium text-cyan-600 mb-2">Disponible</h4>
+            <p class="text-xl md:text-2xl font-bold text-cyan-600">{{ formatearDinero(Math.max(0, limiteCredito - saldoDonEduardo)) }}</p>
+            <p class="text-xs text-cyan-700 mt-1">Para usar</p>
+          </div>
+        </div>
+

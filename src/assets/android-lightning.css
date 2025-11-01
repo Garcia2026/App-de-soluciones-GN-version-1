@@ -1,0 +1,736 @@
+/* ⚡ ANDROID LIGHTNING THEME
+   SUPER OPTIMIZADO + EFECTOS IMPACTANTES MÁXIMOS
+   Hardware Acceleration + Visual Impact Extremo
+*/
+
+/* ==========================================
+   OPTIMIZACIÓN GLOBAL - HARDWARE ACCELERATION
+   ========================================== */
+[data-theme="premium"] * {
+  /* Force hardware acceleration for ALL elements */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ==========================================
+   TRANSFORMACIÓN GLOBAL INSTANTÁNEA Y DRAMÁTICA
+   ========================================== */
+[data-theme="premium"] {
+  /* FONDO COMPLETAMENTE DIFERENTE - INSTANT CHANGE */
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(66, 165, 245, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 152, 0, 0.06) 0%, transparent 50%),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  
+  /* TRANSICIÓN INSTANTÁNEA */
+  transition: none !important;
+  
+  /* TEXTO MÁS CONTRASTADO */
+  color: #1a1a1a !important;
+  font-weight: 500 !important;
+}
+
+/* ==========================================
+   BOTONES ULTRA IMPACTANTES - OPTIMIZADOS
+   ========================================== */
+[data-theme="premium"] .btn-primary,
+[data-theme="premium"] button.btn-primary {
+  /* GRADIENTE ESTÁTICO PERO MUY VISIBLE */
+  background: linear-gradient(135deg, #42a5f5 0%, #1976d2 100%) !important;
+  
+  /* SOMBRA EXTREMA PERO ESTÁTICA */
+  box-shadow: 
+    0 12px 40px rgba(66, 165, 245, 0.4),
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  
+  /* FORMA SÚPER REDONDEADA */
+  border-radius: 2.5rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  
+  color: white !important;
+  padding: 1.25rem 2.5rem !important;
+  font-weight: 800 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  
+  /* SÚPER RÁPIDO */
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out !important;
+  
+  /* HARDWARE ACCELERATION */
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .btn-primary:hover,
+[data-theme="premium"] button.btn-primary:hover {
+  /* EFECTO HOVER SÚPER RÁPIDO E IMPACTANTE */
+  transform: translateY(-6px) scale(1.05) translateZ(0) !important;
+  box-shadow: 
+    0 20px 60px rgba(66, 165, 245, 0.5),
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="premium"] .btn-primary:active,
+[data-theme="premium"] button.btn-primary:active {
+  transform: translateY(-2px) scale(1.02) translateZ(0) !important;
+  transition: transform 0.05s ease-out !important;
+}
+
+/* SECONDARY BUTTON - GREEN IMPACTANTE */
+[data-theme="premium"] .btn-secondary {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+  box-shadow: 
+    0 10px 35px rgba(76, 175, 80, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  
+  border-radius: 2.5rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  padding: 1.25rem 2.5rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .btn-secondary:hover {
+  transform: translateY(-6px) scale(1.05) translateZ(0) !important;
+  box-shadow: 
+    0 18px 50px rgba(76, 175, 80, 0.5),
+    0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* TERTIARY BUTTON - ORANGE ENERGÉTICO */
+[data-theme="premium"] .btn-tertiary {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%) !important;
+  box-shadow: 
+    0 10px 35px rgba(255, 152, 0, 0.4),
+    0 5px 15px rgba(0, 0, 0, 0.15) !important;
+  
+  border-radius: 2.5rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  padding: 1.25rem 2.5rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .btn-tertiary:hover {
+  transform: translateY(-6px) scale(1.05) translateZ(0) !important;
+  box-shadow: 
+    0 18px 50px rgba(255, 152, 0, 0.5),
+    0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ==========================================
+   CARDS ULTRA IMPACTANTES - OPTIMIZADAS
+   ========================================== */
+[data-theme="premium"] .card,
+[data-theme="premium"] .theme-card,
+[data-theme="premium"] .mobile-card {
+  /* BACKGROUND SÚPER CLEAN CON TINT */
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.95) 0%, 
+      rgba(248, 250, 252, 0.98) 100%
+    ) !important;
+  
+  /* BORDER COLORIDO */
+  border: 2px solid rgba(66, 165, 245, 0.15) !important;
+  border-radius: 2rem !important;
+  
+  /* SOMBRA EXTREMA PERO ESTÁTICA */
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    0 4px 20px rgba(66, 165, 245, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  
+  /* BACKDROP BLUR FUERTE */
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  
+  /* OPTIMIZACIÓN */
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out, border-color 0.2s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .card:hover,
+[data-theme="premium"] .theme-card:hover,
+[data-theme="premium"] .mobile-card:hover {
+  /* HOVER IMPACTANTE PERO RÁPIDO */
+  transform: translateY(-8px) scale(1.02) translateZ(0) !important;
+  border-color: rgba(66, 165, 245, 0.3) !important;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 10px 30px rgba(66, 165, 245, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* ==========================================
+   INPUTS IMPACTANTES CON FOCUS EXTREMO
+   ========================================== */
+[data-theme="premium"] input,
+[data-theme="premium"] textarea,
+[data-theme="premium"] select {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid rgba(224, 224, 224, 0.8) !important;
+  border-radius: 1.5rem !important;
+  color: #1a1a1a !important;
+  padding: 1.25rem 1.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  
+  /* SOMBRA INTERNA SUTIL */
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  
+  /* TRANSICIÓN SÚPER RÁPIDA */
+  transition: border-color 0.05s ease-out, box-shadow 0.05s ease-out, transform 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] input::placeholder,
+[data-theme="premium"] textarea::placeholder {
+  color: rgba(26, 26, 26, 0.5) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="premium"] input:focus,
+[data-theme="premium"] textarea:focus,
+[data-theme="premium"] select:focus {
+  outline: none !important;
+  
+  /* BORDER SÚPER VISIBLE */
+  border-color: #42a5f5 !important;
+  border-width: 3px !important;
+  
+  /* RING GLOW EXTREMO */
+  box-shadow: 
+    0 0 0 4px rgba(66, 165, 245, 0.2),
+    0 0 20px rgba(66, 165, 245, 0.15),
+    inset 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+  
+  /* SCALE SUTIL */
+  transform: scale(1.01) translateZ(0) !important;
+  
+  /* BACKGROUND MÁS BLANCO */
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ==========================================
+   NAVEGACIÓN CON EFECTOS SÚPER RÁPIDOS
+   ========================================== */
+[data-theme="premium"] .nav-item,
+[data-theme="premium"] .bottom-nav-item {
+  background: transparent !important;
+  color: #666 !important;
+  border-radius: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  
+  /* TRANSICIÓN SÚPER RÁPIDA */
+  transition: all 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .nav-item:hover,
+[data-theme="premium"] .bottom-nav-item:hover {
+  background: rgba(66, 165, 245, 0.1) !important;
+  color: #42a5f5 !important;
+  transform: translateY(-2px) scale(1.02) translateZ(0) !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="premium"] .nav-item.active,
+[data-theme="premium"] .bottom-nav-item.active {
+  background: linear-gradient(135deg, 
+    rgba(66, 165, 245, 0.15) 0%, 
+    rgba(76, 175, 80, 0.1) 100%) !important;
+  color: #42a5f5 !important;
+  font-weight: 800 !important;
+  
+  /* SOMBRA ACTIVA */
+  box-shadow: 
+    0 4px 15px rgba(66, 165, 245, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  
+  transform: scale(1.02) translateZ(0) !important;
+}
+
+/* ==========================================
+   FAB EXTREMO PERO OPTIMIZADO
+   ========================================== */
+[data-theme="premium"] .fab {
+  background: linear-gradient(135deg, #42a5f5 0%, #4caf50 50%, #ff9800 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 2rem !important;
+  width: 4.5rem !important;
+  height: 4.5rem !important;
+  
+  /* SOMBRA EXTREMA */
+  box-shadow: 
+    0 12px 40px rgba(66, 165, 245, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.15) !important;
+  
+  /* OPTIMIZADO */
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .fab:hover {
+  transform: translateY(-4px) scale(1.1) rotate(5deg) translateZ(0) !important;
+  box-shadow: 
+    0 20px 60px rgba(66, 165, 245, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="premium"] .fab:active {
+  transform: translateY(-2px) scale(1.05) rotate(2deg) translateZ(0) !important;
+  transition: transform 0.1s ease-out !important;
+}
+
+/* ==========================================
+   EFECTOS ESPECIALES EXTREMOS
+   ========================================== */
+
+/* GLOW en elementos interactivos */
+[data-theme="premium"] .btn-primary:hover,
+[data-theme="premium"] .fab:hover {
+  filter: drop-shadow(0 0 20px rgba(66, 165, 245, 0.4)) !important;
+}
+
+[data-theme="premium"] .btn-secondary:hover {
+  filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.4)) !important;
+}
+
+[data-theme="premium"] .btn-tertiary:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 152, 0, 0.4)) !important;
+}
+
+/* SCROLLBAR ULTRA VISIBLE */
+[data-theme="premium"] ::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 7px;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #42a5f5 0%, #4caf50 50%, #ff9800 100%);
+  border-radius: 7px;
+  border: 2px solid #f8fafc;
+  transition: all 0.2s ease;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1976d2 0%, #388e3c 50%, #f57c00 100%);
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   CHIPS SÚPER VISIBLES
+   ========================================== */
+[data-theme="premium"] .chip {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #666 !important;
+  border: 2px solid rgba(224, 224, 224, 0.8) !important;
+  border-radius: 1rem !important;
+  padding: 0.75rem 1.25rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  
+  /* SOMBRA SUTIL */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  
+  transition: all 0.05s ease-out !important;
+  transform: translateZ(0) !important;
+}
+
+[data-theme="premium"] .chip:hover {
+  border-color: #42a5f5 !important;
+  color: #42a5f5 !important;
+  transform: translateY(-2px) scale(1.05) translateZ(0) !important;
+  box-shadow: 0 6px 20px rgba(66, 165, 245, 0.15) !important;
+}
+
+[data-theme="premium"] .chip.selected {
+  background: linear-gradient(135deg, #42a5f5 0%, #4caf50 100%) !important;
+  color: white !important;
+  border-color: transparent !important;
+  font-weight: 700 !important;
+  
+  box-shadow: 
+    0 6px 20px rgba(66, 165, 245, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  
+  transform: scale(1.05) translateZ(0) !important;
+}
+
+/* ==========================================
+   TEXT CONTRAST MEJORADO
+   ========================================== */
+[data-theme="premium"] .text-primary {
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="premium"] .text-secondary {
+  color: #666 !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="premium"] h1, [data-theme="premium"] h2, [data-theme="premium"] h3 {
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================
+   FOCUS INDICATORS SÚPER VISIBLES
+   ========================================== */
+[data-theme="premium"] *:focus-visible {
+  outline: 3px solid #42a5f5 !important;
+  outline-offset: 2px !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================
+   RESPONSIVE OPTIMIZATIONS
+   ========================================== */
+@media (max-width: 768px) {
+  /* Reducir efectos en móvil para performance */
+  [data-theme="premium"] .card:hover,
+  [data-theme="premium"] .theme-card:hover {
+    transform: translateY(-4px) scale(1.01) translateZ(0) !important;
+  }
+  
+  [data-theme="premium"] .btn-primary:hover,
+  [data-theme="premium"] .btn-secondary:hover,
+  [data-theme="premium"] .btn-tertiary:hover {
+    transform: translateY(-3px) scale(1.02) translateZ(0) !important;
+  }
+  
+  [data-theme="premium"] .fab:hover {
+    transform: translateY(-2px) scale(1.05) translateZ(0) !important;
+  }
+}
+
+/* ==========================================
+   DISABLE HEAVY ANIMATIONS ON LOW-END DEVICES
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="premium"] * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* FORCE HARDWARE ACCELERATION FOR INTERACTIVE ELEMENTS */
+[data-theme="premium"] button,
+[data-theme="premium"] .card,
+[data-theme="premium"] input,
+[data-theme="premium"] .nav-item {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* ========== EXTREME UI TRANSFORMATION ========== */
+[data-theme="premium"] .container,
+[data-theme="premium"] .card,
+[data-theme="premium"] .nav-container {
+  animation: morphUI 0.05s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  transform-style: preserve-3d !important;
+  will-change: transform, filter !important;
+  transform: translateZ(0) !important;
+}
+
+@keyframes morphUI {
+  0% {
+    transform: translateZ(0) scale(0.96) rotateX(-3deg);
+    filter: brightness(0.9) contrast(1.1);
+  }
+  50% {
+    transform: translateZ(0) scale(1.01) rotateX(1deg);
+    filter: brightness(1.1) contrast(1.2);
+  }
+  100% {
+    transform: translateZ(0) scale(1) rotateX(0deg);
+    filter: brightness(1) contrast(1);
+  }
+}
+
+/* ========== RAINBOW GLOW EFFECT ========== */
+[data-theme="premium"] .btn-primary:hover::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #42a5f5, #4caf50, #ff9800, #e91e63, #42a5f5);
+  background-size: 200% 200%;
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(8px);
+  animation: rainbowGlow 2s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes rainbowGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ========== ULTRA VISUAL IMPACT ========== */
+[data-theme="premium"] .fab:hover {
+  animation: megaPulse 0.05s ease-out !important;
+}
+
+@keyframes megaPulse {
+  0% { transform: translateY(-4px) scale(1.1) rotate(5deg) translateZ(0); }
+  25% { transform: translateY(-8px) scale(1.15) rotate(10deg) translateZ(0); }
+  50% { transform: translateY(-12px) scale(1.2) rotate(-5deg) translateZ(0); }
+  75% { transform: translateY(-8px) scale(1.15) rotate(5deg) translateZ(0); }
+  100% { transform: translateY(-4px) scale(1.1) rotate(0deg) translateZ(0); }
+}
+
+/* ========== SONIC BOOM VISUAL EFFECTS ========== */
+[data-theme="premium"] .btn-primary:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(66, 165, 245, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: sonicBoom 0.5s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes sonicBoom {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/* ========== CARD RIPPLE EFFECT ========== */
+[data-theme="premium"] .card:active {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="premium"] .card:active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(66, 165, 245, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: cardRipple 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes cardRipple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+
+/* ========== INSTANT THEME SWITCH VISUAL ========== */
+[data-theme="premium"] {
+  animation: themeExplosion 0.05s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+@keyframes themeExplosion {
+  0% {
+    filter: brightness(1) saturate(1) hue-rotate(0deg);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.3) saturate(1.5) hue-rotate(15deg);
+    transform: scale(1.02);
+  }
+  100% {
+    filter: brightness(1) saturate(1.2) hue-rotate(0deg);
+    transform: scale(1);
+  }
+}
+
+/* ========== EFECTOS DE SONIDO VISUALES ========== */
+
+/* SOUND WAVE VISUAL EFFECT */
+[data-theme="premium"] .btn-primary:active {
+  position: relative;
+  overflow: visible;
+}
+
+[data-theme="premium"] .btn-primary:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(66, 165, 245, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: soundWave 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes soundWave {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    border-width: 3px;
+  }
+  25% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+    border-width: 2px;
+  }
+  50% {
+    width: 120px;
+    height: 120px;
+    opacity: 0.4;
+    border-width: 1px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    border-width: 0px;
+  }
+}
+
+/* TRIPLE WAVE EFFECT FOR FAB */
+[data-theme="premium"] .fab:active::before,
+[data-theme="premium"] .fab:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid rgba(66, 165, 245, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+[data-theme="premium"] .fab:active::before {
+  animation: tripleWave1 0.8s ease-out;
+}
+
+[data-theme="premium"] .fab:active::after {
+  animation: tripleWave2 0.8s ease-out 0.1s;
+}
+
+@keyframes tripleWave1 {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+  }
+}
+
+@keyframes tripleWave2 {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/* VIBRATION VISUAL EFFECT */
+[data-theme="premium"] .nav-item:active,
+[data-theme="premium"] .bottom-nav-item:active {
+  animation: visualVibration 0.05s ease-in-out;
+}
+
+@keyframes visualVibration {
+  0%, 100% { transform: translateX(0) translateZ(0); }
+  10% { transform: translateX(-2px) translateZ(0); }
+  20% { transform: translateX(2px) translateZ(0); }
+  30% { transform: translateX(-2px) translateZ(0); }
+  40% { transform: translateX(2px) translateZ(0); }
+  50% { transform: translateX(-1px) translateZ(0); }
+  60% { transform: translateX(1px) translateZ(0); }
+  70% { transform: translateX(-1px) translateZ(0); }
+  80% { transform: translateX(1px) translateZ(0); }
+  90% { transform: translateX(0) translateZ(0); }
+}
+
+/* ELECTRIC SPARK EFFECT */
+[data-theme="premium"] input:focus,
+[data-theme="premium"] textarea:focus {
+  position: relative;
+}
+
+[data-theme="premium"] input:focus::before,
+[data-theme="premium"] textarea:focus::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(66, 165, 245, 0.3), transparent);
+  border-radius: inherit;
+  animation: electricSpark 0.5s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes electricSpark {
+  0% { opacity: 0; transform: rotate(0deg) scale(0.8); }
+  50% { opacity: 1; transform: rotate(180deg) scale(1.1); }
+  100% { opacity: 0; transform: rotate(360deg) scale(1); }
+}

@@ -1,0 +1,545 @@
+/* 🤖 ANDROID MATERIAL DESIGN 3 THEME
+   Transformación DRAMÁTICA estilo Android 12+ Material You
+   Purple Dynamic Colors + Superficies + Animaciones Android
+*/
+
+/* ========================================
+   TRANSFORMACIÓN GLOBAL DE FONDO ANDROID
+   ======================================== */
+[data-theme="premium"] {
+  /* CAMBIO RADICAL DE COLOR DE FONDO - Purple tinted */
+  background: linear-gradient(135deg, 
+    rgb(255, 248, 250) 0%,     /* Surface bright */
+    rgb(244, 239, 244) 35%,    /* Surface container */ 
+    rgb(231, 224, 236) 100%    /* Surface variant */
+  ) !important;
+  
+  min-height: 100vh;
+  color: rgb(28, 27, 31) !important; /* On surface */
+  
+  /* Backdrop blur sutil Android style */
+  backdrop-filter: blur(1px) saturate(110%);
+  
+  /* Transición dramática cuando se activa */
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+/* ========================================
+   DYNAMIC COLOR SYSTEM - ANDROID M3
+   ======================================== */
+[data-theme="premium"] {
+  /* Primary Purple - MUY VISIBLE */
+  --md3-primary: 103, 80, 164;          /* #6750a4 */
+  --md3-on-primary: 255, 255, 255;      /* #ffffff */
+  --md3-primary-container: 208, 188, 255; /* #d0bcff */
+  --md3-on-primary-container: 33, 0, 93;  /* #21005d */
+  
+  /* Secondary - Neutral variant */
+  --md3-secondary: 98, 91, 113;         /* #625b71 */
+  --md3-on-secondary: 255, 255, 255;    /* #ffffff */
+  --md3-secondary-container: 204, 194, 220; /* #ccc2dc */
+  --md3-on-secondary-container: 30, 25, 43; /* #1e192b */
+  
+  /* Tertiary - Android distintivo */
+  --md3-tertiary: 125, 82, 96;          /* #7d5260 */
+  --md3-on-tertiary: 255, 255, 255;     /* #ffffff */
+  --md3-tertiary-container: 239, 184, 200; /* #efb8c8 */
+  --md3-on-tertiary-container: 55, 11, 30; /* #370b1e */
+  
+  /* Surface System - Android jerarquía */
+  --md3-surface: 255, 248, 250;         /* #fff8fa */
+  --md3-surface-variant: 231, 224, 236; /* #e7e0ec */
+  --md3-surface-container-lowest: 255, 255, 255; /* #ffffff */
+  --md3-surface-container-low: 247, 242, 247;    /* #f7f2f7 */
+  --md3-surface-container: 244, 239, 244;        /* #f4eff4 */
+  --md3-surface-container-high: 236, 230, 240;   /* #ece6f0 */
+  --md3-surface-container-highest: 230, 224, 233; /* #e6e0e9 */
+  
+  /* Outline system */
+  --md3-outline: 121, 116, 126;         /* #79747e */
+  --md3-outline-variant: 202, 196, 208; /* #cac4d0 */
+  
+  /* Error colors */
+  --md3-error: 186, 26, 26;             /* #ba1a1a */
+  --md3-error-container: 255, 218, 214; /* #ffdad6 */
+  
+  /* Android specific effects */
+  --md3-scrim: 0, 0, 0;                 /* #000000 */
+  --md3-shadow: 0, 0, 0;                /* #000000 */
+}
+
+/* ========================================
+   FONDO GLOBAL ANDROID MATERIAL YOU
+   ======================================== */
+[data-theme="premium"] html,
+[data-theme="premium"] body {
+  background: linear-gradient(135deg, 
+    rgb(var(--md3-surface)) 0%, 
+    rgb(var(--md3-surface-container)) 50%,
+    rgb(var(--md3-surface-variant)) 100%
+  ) !important;
+  color: rgb(var(--md3-on-surface)) !important;
+}
+
+/* ========================================
+   BOTONES ANDROID M3 - DRAMÁTICOS
+   ======================================== */
+
+/* Primary Button - Purple vibrante */
+[data-theme="premium"] .btn-primary,
+[data-theme="premium"] button.btn-primary {
+  background: linear-gradient(135deg, 
+    rgb(var(--md3-primary)), 
+    rgb(103, 80, 164)
+  ) !important;
+  color: rgb(var(--md3-on-primary)) !important;
+  border: none !important;
+  border-radius: 1.5rem !important; /* Android M3 button radius */
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  
+  /* Android M3 shadow system */
+  box-shadow: 
+    0 1px 2px rgba(var(--md3-shadow), 0.3),
+    0 2px 6px rgba(var(--md3-primary), 0.15) !important;
+  
+  /* Android spring animation */
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+  
+  /* State layer overlay */
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+[data-theme="premium"] .btn-primary::before,
+[data-theme="premium"] button.btn-primary::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgb(var(--md3-on-primary)) !important;
+  opacity: 0 !important;
+  transition: opacity 0.05s ease !important;
+  border-radius: inherit !important;
+}
+
+[data-theme="premium"] .btn-primary:hover,
+[data-theme="premium"] button.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 
+    0 4px 12px rgba(var(--md3-shadow), 0.15),
+    0 6px 20px rgba(var(--md3-primary), 0.25) !important;
+}
+
+[data-theme="premium"] .btn-primary:hover::before,
+[data-theme="premium"] button.btn-primary:hover::before {
+  opacity: 0.08 !important; /* State layer */
+}
+
+[data-theme="premium"] .btn-primary:active,
+[data-theme="premium"] button.btn-primary:active {
+  transform: translateY(0px) scale(0.98) !important;
+}
+
+[data-theme="premium"] .btn-primary:active::before,
+[data-theme="premium"] button.btn-primary:active::before {
+  opacity: 0.12 !important;
+}
+
+/* Secondary Button - Container style */
+[data-theme="premium"] .btn-secondary {
+  background: rgb(var(--md3-secondary-container)) !important;
+  color: rgb(var(--md3-on-secondary-container)) !important;
+  border: 1px solid rgb(var(--md3-outline-variant)) !important;
+  border-radius: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 3px rgba(var(--md3-shadow), 0.12) !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] .btn-secondary:hover {
+  background: rgb(var(--md3-secondary)) !important;
+  color: rgb(var(--md3-on-secondary)) !important;
+  transform: translateY(-1px) scale(1.02) !important;
+  box-shadow: 0 4px 12px rgba(var(--md3-shadow), 0.15) !important;
+}
+
+/* Tertiary Button - Android distinctive */
+[data-theme="premium"] .btn-tertiary {
+  background: rgb(var(--md3-tertiary-container)) !important;
+  color: rgb(var(--md3-on-tertiary-container)) !important;
+  border: 1px solid rgb(var(--md3-tertiary)) !important;
+  border-radius: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] .btn-tertiary:hover {
+  background: rgb(var(--md3-tertiary)) !important;
+  color: rgb(var(--md3-on-tertiary)) !important;
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+/* Outline Button */
+[data-theme="premium"] .btn-outlined {
+  background: transparent !important;
+  color: rgb(var(--md3-primary)) !important;
+  border: 2px solid rgb(var(--md3-outline)) !important;
+  border-radius: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] .btn-outlined:hover {
+  background: rgba(var(--md3-primary), 0.08) !important;
+  border-color: rgb(var(--md3-primary)) !important;
+  transform: scale(1.02) !important;
+}
+
+/* FAB - Android distinctive */
+[data-theme="premium"] .fab {
+  background: rgb(var(--md3-primary-container)) !important;
+  color: rgb(var(--md3-on-primary-container)) !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  box-shadow: 
+    0 3px 5px rgba(var(--md3-shadow), 0.2),
+    0 6px 10px rgba(var(--md3-primary), 0.15) !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] .fab:hover {
+  transform: scale(1.1) translateY(-2px) !important;
+  box-shadow: 
+    0 6px 10px rgba(var(--md3-shadow), 0.25),
+    0 8px 20px rgba(var(--md3-primary), 0.2) !important;
+}
+
+/* ========================================
+   CARDS ANDROID M3 - SURFACE SYSTEM
+   ======================================== */
+[data-theme="premium"] .card,
+[data-theme="premium"] .theme-card,
+[data-theme="premium"] .mobile-card {
+  background: rgb(var(--md3-surface-container-high)) !important;
+  border: 1px solid rgb(var(--md3-outline-variant)) !important;
+  border-radius: 1.5rem !important; /* Android M3 cards más redondeadas */
+  box-shadow: 
+    0 1px 3px rgba(var(--md3-shadow), 0.12),
+    0 1px 2px rgba(var(--md3-shadow), 0.24) !important;
+  backdrop-filter: blur(8px) saturate(120%) !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+  color: rgb(28, 27, 31) !important; /* On surface */
+}
+
+[data-theme="premium"] .card:hover,
+[data-theme="premium"] .theme-card:hover,
+[data-theme="premium"] .mobile-card:hover {
+  background: rgb(var(--md3-surface-container-highest)) !important;
+  border-color: rgb(var(--md3-outline)) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 
+    0 4px 8px rgba(var(--md3-shadow), 0.16),
+    0 8px 16px rgba(var(--md3-primary), 0.1) !important;
+}
+
+/* Card elevated - más dramática */
+[data-theme="premium"] .card-elevated {
+  background: rgb(var(--md3-surface-container-highest)) !important;
+  box-shadow: 
+    0 4px 8px rgba(var(--md3-shadow), 0.16),
+    0 2px 4px rgba(var(--md3-shadow), 0.24),
+    0 8px 16px rgba(var(--md3-primary), 0.08) !important;
+}
+
+[data-theme="premium"] .card-elevated:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 
+    0 8px 16px rgba(var(--md3-shadow), 0.2),
+    0 16px 32px rgba(var(--md3-primary), 0.12) !important;
+}
+
+/* ========================================
+   INPUTS ANDROID M3 - MATERIAL FORM FIELDS
+   ======================================== */
+[data-theme="premium"] input,
+[data-theme="premium"] textarea,
+[data-theme="premium"] select,
+[data-theme="premium"] .mobile-input {
+  background: rgb(var(--md3-surface-container)) !important;
+  border: 2px solid rgb(var(--md3-outline-variant)) !important;
+  border-radius: 1rem !important; /* Android input radius */
+  color: rgb(var(--md3-on-surface)) !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] input::placeholder,
+[data-theme="premium"] textarea::placeholder {
+  color: rgba(var(--md3-on-surface-variant), 0.7) !important;
+}
+
+[data-theme="premium"] input:focus,
+[data-theme="premium"] textarea:focus,
+[data-theme="premium"] select:focus {
+  outline: none !important;
+  border-color: rgb(var(--md3-primary)) !important;
+  border-width: 3px !important;
+  background: rgb(var(--md3-surface-container-high)) !important;
+  
+  /* Android M3 focus ring */
+  box-shadow: 
+    0 0 0 3px rgba(var(--md3-primary), 0.12),
+    0 2px 4px rgba(var(--md3-shadow), 0.1) !important;
+  
+  transform: scale(1.01) !important;
+  padding: calc(1rem - 1px) calc(1.25rem - 1px) !important;
+}
+
+[data-theme="premium"] input:hover:not(:focus),
+[data-theme="premium"] textarea:hover:not(:focus) {
+  border-color: rgb(var(--md3-outline)) !important;
+  background: rgb(var(--md3-surface-container-high)) !important;
+}
+
+/* Error state */
+[data-theme="premium"] input.error,
+[data-theme="premium"] textarea.error {
+  border-color: rgb(var(--md3-error)) !important;
+  background: rgb(var(--md3-error-container)) !important;
+  color: rgb(var(--md3-on-error-container)) !important;
+}
+
+/* ========================================
+   NAVEGACIÓN ANDROID M3 - NAVIGATION RAIL
+   ======================================== */
+[data-theme="premium"] .nav-container,
+[data-theme="premium"] .tab-bar {
+  background: rgb(var(--md3-surface-container)) !important;
+  border-bottom: 1px solid rgb(var(--md3-outline-variant)) !important;
+  box-shadow: 
+    0 1px 3px rgba(var(--md3-shadow), 0.12),
+    0 4px 8px rgba(var(--md3-primary), 0.04) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+}
+
+[data-theme="premium"] .nav-item,
+[data-theme="premium"] .bottom-nav-item {
+  color: rgb(var(--md3-on-surface-variant)) !important;
+  background: transparent !important;
+  border-radius: 1.5rem !important;
+  padding: 0.75rem 1.25rem !important;
+  font-weight: 500 !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+  position: relative !important;
+}
+
+[data-theme="premium"] .nav-item:hover,
+[data-theme="premium"] .bottom-nav-item:hover {
+  color: rgb(var(--md3-on-surface)) !important;
+  background: rgba(var(--md3-primary), 0.08) !important;
+  transform: translateY(-1px) scale(1.05) !important;
+}
+
+[data-theme="premium"] .nav-item.active,
+[data-theme="premium"] .bottom-nav-item.active {
+  color: rgb(var(--md3-on-primary-container)) !important;
+  background: rgb(var(--md3-primary-container)) !important;
+  box-shadow: 
+    0 2px 4px rgba(var(--md3-shadow), 0.16),
+    0 4px 8px rgba(var(--md3-primary), 0.12) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ========================================
+   CHIPS ANDROID M3 - FILTER/SUGGESTION
+   ======================================== */
+[data-theme="premium"] .chip {
+  background: rgb(var(--md3-surface-container-high)) !important;
+  color: rgb(var(--md3-on-surface-variant)) !important;
+  border: 1px solid rgb(var(--md3-outline-variant)) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.05s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+[data-theme="premium"] .chip:hover {
+  background: rgb(var(--md3-surface-container-highest)) !important;
+  border-color: rgb(var(--md3-outline)) !important;
+  transform: scale(1.05) !important;
+}
+
+[data-theme="premium"] .chip.selected {
+  background: rgb(var(--md3-secondary-container)) !important;
+  color: rgb(var(--md3-on-secondary-container)) !important;
+  border-color: rgb(var(--md3-secondary)) !important;
+  box-shadow: 0 2px 4px rgba(var(--md3-shadow), 0.16) !important;
+}
+
+/* ========================================
+   ANIMACIONES ANDROID 12+ DISTINTIVAS
+   ======================================== */
+
+/* Entrada dramática del tema */
+[data-theme="premium"] * {
+  animation: androidFadeIn 0.05s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes androidFadeIn {
+  from {
+    opacity: 0.8;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ripple effect Android */
+[data-theme="premium"] .btn-primary:active,
+[data-theme="premium"] .card:active {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="premium"] .btn-primary:active::after,
+[data-theme="premium"] .card:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.05s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   SCROLLBARS ANDROID STYLE
+   ======================================== */
+[data-theme="premium"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-track {
+  background: rgb(var(--md3-surface-variant));
+  border-radius: 6px;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, 
+    rgb(var(--md3-primary)), 
+    rgb(var(--md3-tertiary))
+  );
+  border-radius: 6px;
+  transition: background 0.05s ease;
+}
+
+[data-theme="premium"] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, 
+    rgb(var(--md3-primary)), 
+    rgba(var(--md3-primary), 0.8)
+  );
+}
+
+/* ========================================
+   RESPONSIVE ANDROID ADAPTATIONS
+   ======================================== */
+@media (max-width: 768px) {
+  [data-theme="premium"] .card,
+  [data-theme="premium"] .theme-card {
+    border-radius: 1.25rem !important;
+    margin: 0.75rem !important;
+  }
+  
+  [data-theme="premium"] .btn-primary,
+  [data-theme="premium"] .btn-secondary {
+    border-radius: 1.25rem !important;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  [data-theme="premium"] input,
+  [data-theme="premium"] textarea {
+    border-radius: 0.875rem !important;
+    padding: 0.875rem 1rem !important;
+  }
+}
+
+/* ========================================
+   HIGH CONTRAST & ACCESSIBILITY
+   ======================================== */
+[data-theme="premium"] .text-primary {
+  color: rgb(var(--md3-on-surface)) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="premium"] .text-secondary {
+  color: rgb(var(--md3-on-surface-variant)) !important;
+}
+
+[data-theme="premium"] .text-accent {
+  color: rgb(var(--md3-primary)) !important;
+  font-weight: 600 !important;
+}
+
+/* Focus indicators mejorados */
+[data-theme="premium"] *:focus-visible {
+  outline: 3px solid rgb(var(--md3-primary)) !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+/* ========================================
+   EFECTOS ESPECIALES ANDROID
+   ======================================== */
+
+/* Glow effect para elementos interactivos */
+[data-theme="premium"] .btn-primary:hover,
+[data-theme="premium"] .fab:hover {
+  filter: drop-shadow(0 0 8px rgba(var(--md3-primary), 0.3));
+}
+
+/* Surface tinting sutil */
+[data-theme="premium"] .card::before,
+[data-theme="premium"] .theme-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(var(--md3-primary), 0.02) 0%,
+    rgba(var(--md3-tertiary), 0.01) 100%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}

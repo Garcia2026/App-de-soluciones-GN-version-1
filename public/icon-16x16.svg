@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0fdf4;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Fondo circular con gradiente -->
+  <circle cx="8" cy="8" r="7.2" fill="url(#mainGradient)" filter="url(#shadow)"/>
+  
+  <!-- Círculo interior para profundidad -->
+  <circle cx="8" cy="8" r="6.4" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.08"/>
+  
+  <!-- Hojas decorativas de fondo -->
+  <g opacity="0.15">
+    <path d="M4 4.8 Q5.6 4 7.2 4.8 Q5.6 5.6 4 4.8 Z" fill="#ffffff"/>
+    <path d="M10.4 10.4 Q12 9.6 13.6 10.4 Q12 11.2 10.4 10.4 Z" fill="#ffffff"/>
+  </g>
+  
+  <!-- Texto GN -->
+  <text x="8" y="10.4" text-anchor="middle" fill="url(#textGradient)" 
+        font-family="Arial, sans-serif" font-weight="bold" font-size="4.8"
+        style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">GN</text>
+  
+  <!-- Puntos decorativos -->
+  <circle cx="4" cy="3.2" r="0.24" fill="#ffffff" opacity="0.8"/>
+  <circle cx="12" cy="4" r="0.16" fill="#ffffff" opacity="0.6"/>
+  <circle cx="3.2" cy="12.8" r="0.16" fill="#ffffff" opacity="0.7"/>
+  <circle cx="12.8" cy="13.6" r="0.24" fill="#ffffff" opacity="0.5"/>
+</svg>

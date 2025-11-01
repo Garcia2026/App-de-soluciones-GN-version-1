@@ -1,0 +1,576 @@
+/* ================================================ */
+/* ESTILOS FINALES ULTRA-ÉPICOS */
+/* ================================================ */
+
+/* TÍTULO CYBER CON GLITCH */
+.title-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.cyber-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.glitch-text {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  display: inline-block;
+  animation: glitchPrimary 3s ease-in-out infinite;
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitchBefore 3s ease-in-out infinite;
+  color: #ff0080;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitchAfter 3s ease-in-out infinite;
+  color: #ffff00;
+  z-index: -2;
+}
+
+@keyframes glitchPrimary {
+  0%, 90%, 100% { transform: translateX(0); }
+  92% { transform: translateX(-2px); }
+  94% { transform: translateX(2px); }
+  96% { transform: translateX(-1px); }
+}
+
+@keyframes glitchBefore {
+  0%, 90%, 100% { transform: translateX(0); }
+  92% { transform: translateX(2px); }
+  94% { transform: translateX(-2px); }
+  96% { transform: translateX(1px); }
+}
+
+@keyframes glitchAfter {
+  0%, 90%, 100% { transform: translateX(0); }
+  92% { transform: translateX(-1px); }
+  94% { transform: translateX(1px); }
+  96% { transform: translateX(-2px); }
+}
+
+.title-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.title-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse, rgba(0, 255, 255, 0.3), transparent);
+  animation: titleGlowPulse 2s ease-in-out infinite alternate;
+  border-radius: 50%;
+}
+
+.title-scan {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: titleScan 4s ease-in-out infinite;
+}
+
+@keyframes titleGlowPulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes titleScan {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
+}
+
+/* TERMINAL FUTURISTA */
+.terminal-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff41;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem 0;
+  font-family: 'Courier New', monospace;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 65, 0.3),
+    inset 0 0 20px rgba(0, 255, 65, 0.1);
+  animation: terminalFlicker 0.1s ease-in-out infinite alternate;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: dotBlink 2s ease-in-out infinite;
+}
+
+.terminal-dot.red { background: #ff0000; }
+.terminal-dot.yellow { background: #ffff00; animation-delay: 0.3s; }
+.terminal-dot.green { background: #00ff00; animation-delay: 0.6s; }
+
+@keyframes dotBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.terminal-body {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00ff41;
+  font-size: 0.9rem;
+}
+
+.terminal-prompt {
+  color: #ff0080;
+  font-weight: bold;
+}
+
+.typing-text {
+  animation: typeWriter 0.5s steps(30) infinite;
+}
+
+.cursor {
+  color: #00ff41;
+  animation: cursorBlink 1s ease-in-out infinite;
+}
+
+@keyframes terminalFlicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+
+@keyframes typeWriter {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* CÓDIGO BINARIO FLOTANTE */
+.binary-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.binary-code {
+  position: absolute;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  animation: binaryFloat linear infinite;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+@keyframes binaryFloat {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* ONDAS DE SONIDO VISUALES */
+.sound-waves {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.sound-wave {
+  width: 4px;
+  background: linear-gradient(to top, #00ffff, #ff0080);
+  border-radius: 2px;
+  animation: soundBounce ease-in-out infinite alternate;
+}
+
+.wave-1 {
+  height: 20px;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  height: 35px;
+  animation-duration: 0.6s;
+  animation-delay: 0.1s;
+}
+
+.wave-3 {
+  height: 50px;
+  animation-duration: 0.4s;
+  animation-delay: 0.2s;
+}
+
+.wave-4 {
+  height: 30px;
+  animation-duration: 0.7s;
+  animation-delay: 0.3s;
+}
+
+.wave-5 {
+  height: 25px;
+  animation-duration: 0.5s;
+  animation-delay: 0.4s;
+}
+
+@keyframes soundBounce {
+  0% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* MEDIDOR DE ENERGÍA */
+.energy-meter {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.meter-frame {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  margin: 0 auto 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.meter-bars {
+  display: flex;
+  height: 100%;
+  gap: 1px;
+}
+
+.meter-bar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.meter-bar.active {
+  background: linear-gradient(to top, #ff0000, #ffff00, #00ff00);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.meter-spark {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 30px;
+  background: radial-gradient(ellipse, #ffffff, transparent);
+  transform: translateX(-50%);
+  animation: sparkFlicker 0.1s ease-in-out infinite alternate;
+}
+
+.meter-label {
+  font-family: 'Courier New', monospace;
+  color: #00ffff;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  animation: labelGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes sparkFlicker {
+  0% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+}
+
+@keyframes labelGlow {
+  0% { text-shadow: 0 0 5px #00ffff; }
+  100% { text-shadow: 0 0 20px #00ffff; }
+}
+
+/* PROGRESO HOLOGRÁFICO */
+.holographic-progress {
+  position: relative;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  animation: ringRotate 3s linear infinite;
+}
+
+.progress-ring-background {
+  fill: none;
+  stroke: rgba(0, 255, 255, 0.1);
+  stroke-width: 3;
+}
+
+.progress-ring-progress {
+  fill: none;
+  stroke: url(#progress-gradient);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+  animation: progressGlow 2s ease-in-out infinite alternate;
+}
+
+.progress-center {
+  position: absolute;
+  text-align: center;
+}
+
+.progress-percentage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  animation: percentageGlow 1s ease-in-out infinite alternate;
+}
+
+.progress-status {
+  font-size: 0.7rem;
+  color: #ff0080;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+  margin-top: 0.2rem;
+}
+
+@keyframes ringRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes progressGlow {
+  0% { stroke: #00ffff; filter: drop-shadow(0 0 3px #00ffff); }
+  100% { stroke: #ff0080; filter: drop-shadow(0 0 10px #ff0080); }
+}
+
+@keyframes percentageGlow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* FLUJO DE DATOS */
+.data-flow {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
+.data-packet {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(to top, #00ffff, #ff0080);
+  border-radius: 2px;
+  animation: dataFlowMove linear infinite;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes dataFlowMove {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+/* RADAR SCANNER */
+.radar-scanner {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent);
+  border-radius: 50%;
+}
+
+.radar-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.radar-circle {
+  position: absolute;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-1 { width: 30px; height: 30px; }
+.circle-2 { width: 60px; height: 60px; }
+.circle-3 { width: 90px; height: 90px; }
+
+.radar-line {
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  background: rgba(0, 255, 255, 0.3);
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.line-1 { transform: translateX(-50%) rotate(0deg); }
+.line-2 { transform: translateX(-50%) rotate(90deg); }
+
+.radar-sweep {
+  position: absolute;
+  width: 2px;
+  height: 45px;
+  background: linear-gradient(to top, #00ffff, transparent);
+  top: 5px;
+  left: 50%;
+  transform-origin: bottom center;
+  animation: radarSweep 2s linear infinite;
+}
+
+.radar-blip {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ff0080;
+  border-radius: 50%;
+  animation: blipPulse 1s ease-in-out infinite;
+}
+
+.blip-1 { top: 20%; left: 30%; animation-delay: 0s; }
+.blip-2 { top: 60%; left: 70%; animation-delay: 0.5s; }
+.blip-3 { top: 80%; left: 20%; animation-delay: 1s; }
+
+@keyframes radarSweep {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes blipPulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+    box-shadow: 0 0 5px #ff0080;
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(1.5);
+    box-shadow: 0 0 15px #ff0080;
+  }
+}
+
+/* SISTEMA DE COORDENADAS */
+.coordinate-system {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+.coord-text {
+  margin-bottom: 0.3rem;
+  animation: coordFlicker 3s ease-in-out infinite;
+}
+
+.coord-text:nth-child(2) { animation-delay: 1s; }
+.coord-text:nth-child(3) { animation-delay: 2s; }
+
+@keyframes coordFlicker {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.3; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .glitch-text {
+    font-size: 2rem;
+  }
+  
+  .holographic-progress {
+    transform: scale(0.8);
+  }
+  
+  .energy-meter .meter-frame {
+    width: 250px;
+  }
+  
+  .radar-scanner {
+    width: 80px;
+    height: 80px;
+    right: 20px;
+    bottom: 80px;
+  }
+  
+  .coordinate-system {
+    font-size: 0.6rem;
+    left: 10px;
+    bottom: 10px;
+  }
+}

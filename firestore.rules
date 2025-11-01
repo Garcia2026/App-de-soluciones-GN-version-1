@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // REGLAS ABIERTAS PARA DESARROLLO - GN Jardinería
+    // ⚠️ IMPORTANTE: En producción estas reglas deben ser más restrictivas
+    
+    // Permitir acceso completo para usuarios autenticados (incluso anónimos)
+    match /{document=**} {
+      allow read, write, create, delete: if request.auth != null;
+    }
+    
+    // Fallback: Permitir acceso completo temporal (solo para debug)
+    match /{document=**} {
+      allow read, write, create, delete: if true;
+    }
+    
+    // Reglas específicas para colecciones principales
+    match /servicios/{servicioId} {
+      allow read, write, create, delete: if true;
+    }
+    
+    match /gastos/{gastoId} {
+      allow read, write, create, delete: if true;
+    }
+    
+    match /don_eduardo_movements/{movementId} {
+      allow read, write, create, delete: if true;
+    }
+    
+    // Permitir acceso a metadatos y configuraciones
+    match /metadata/{document} {
+      allow read, write, create, delete: if true;
+    }
+    
+    match /config/{document} {
+      allow read, write, create, delete: if true;
+    }
+    
+    // Permite leer/escribir datos del dashboard
+    match /dashboard/{userId}/{document=**} {
+      allow read, write, create, delete: if true;
+    }
+  }
+}
